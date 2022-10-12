@@ -1,0 +1,33 @@
+@import "./var";
+@import "./mixin";
+
+.section__heading h3 {
+  @include fontSize(20);
+  color: $dark;
+}
+
+.section__heading h2 {
+  @include fontSize(27);
+  color: $dark;
+  position: relative;
+}
+
+.section__heading h2::before {
+  content: "";
+  position: absolute;
+  left: 50%;
+  bottom: -50%;
+  width: 50px;
+  height: 2px;
+  background: $lineColor;
+  transform: translateX(-50%);
+}
+
+.section__heading p {
+  @include fontSize(13);
+  font-weight: 400;
+}
+
+.invert {
+  filter: invert(100%);
+}

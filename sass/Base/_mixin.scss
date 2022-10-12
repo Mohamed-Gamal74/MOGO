@@ -1,0 +1,48 @@
+@import "./var";
+@font-face {
+  font-family: Kaushan Script;
+  src: url("../../fonts/KaushanScript-Regular.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../../fonts/Montserrat-Regular.ttf");
+}
+
+@font-face {
+  font-family: Montserrat;
+  src: url("../../fonts/Montserrat-Medium.ttf");
+}
+
+@mixin kaushan($type) {
+  @if $type == normal {
+    font-family: "Kaushan Script", cursive;
+    font-weight: 400;
+  }
+}
+
+@mixin montserrat($type) {
+  @if $type == normal {
+    font-family: Montserrat, sans-serif;
+    font-weight: 400;
+  }
+}
+
+@mixin fontSize($value) {
+  font-size: calc($value / $fontSize) + rem;
+}
+
+// mixin for responsive
+@mixin responsive($breakPoint) {
+  @if $breakPoint == sm {
+    @media screen and (max-width: 576px) {
+      @content;
+    }
+  }
+
+  @if $breakPoint == lg {
+    @media screen and (max-width: 990px) {
+      @content;
+    }
+  }
+}
